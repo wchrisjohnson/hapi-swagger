@@ -1,0 +1,90 @@
+swagger: '2.0'
+
+info:
+  version: "3.0.0"
+  title: Heroku Platform API - User Preferences
+
+paths:
+  /users/{identity}/preferences:
+    get:
+      description: |
+        Retrieve User Preferences.
+      parameters:
+        -
+          name: id
+          in: query
+          description: Size of array
+          required: true
+          type: number
+          format: double
+      responses:
+        200:
+          description: Successful response
+          schema:
+            title: ArrayOfUserPreferences
+            type: array
+            items:
+              title: UserPreference
+              type: object
+              properties:
+                timezone:
+                  type: string
+                default-organization:
+                  type: string
+                dismissed-github-banner:
+                  type: boolean
+                dismissed-getting-started:
+                  type: boolean
+                dismissed-org-access-controls:
+                  type: boolean
+                dismissed-org-wizard-notification:
+                  type: boolean
+                dismissed-pipelines-banner:
+                  type: boolean
+                dismissed-pipelines-github-banner:
+                  type: boolean
+                dismissed-pipelines-github-banners:
+                  type: array
+                dismissed-sms-banner:
+                  type: boolean
+    patch:
+      description: |
+        Update User Preferences.
+      parameters:
+        -
+          name: id
+          in: query
+          description: Size of array
+          required: true
+          type: number
+          format: double
+      responses:
+        200:
+          description: Successful response
+          schema:
+            title: ArrayOfUserPreferences
+            type: array
+            items:
+              title: UserPreference
+              type: object
+              properties:
+                timezone:
+                  type: string
+                default-organization:
+                  type: string
+                dismissed-github-banner:
+                  type: boolean
+                dismissed-getting-started:
+                  type: boolean
+                dismissed-org-access-controls:
+                  type: boolean
+                dismissed-org-wizard-notification:
+                  type: boolean
+                dismissed-pipelines-banner:
+                  type: boolean
+                dismissed-pipelines-github-banner:
+                  type: boolean
+                dismissed-pipelines-github-banners:
+                  type: array
+                dismissed-sms-banner:
+                  type: boolean
